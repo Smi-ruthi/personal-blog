@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Smiruthi's Aqua Space{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sky-glow glow-one"></div><div class="sky-glow glow-two"></div>
+  <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div>
+  <aside class="side-rail">
+    <a class="brand-orb" href="{{ url_for('home') }}" aria-label="Home">♡</a>
+    <a class="rail-link" href="{{ url_for('home') }}"><span class="aero-icon home-icon">⌂</span><small>Home</small></a>
+    <a class="rail-link" href="{{ url_for('about') }}"><span class="aero-icon">☁</span><small>About</small></a>
+    <a class="rail-link" href="{{ url_for('pokemon') }}"><span class="pokeball"><i></i></span><small>Pokémon</small></a>
+    <a class="rail-link" href="{{ url_for('blog') }}"><span class="aero-icon">♫</span><small>Blog</small></a>
+    <div class="rail-spacer"></div>
+    <div class="mini-console" title="Tiny game console"><div class="console-screen">✦</div><div class="console-pad">＋</div><div class="console-dot">●</div></div>
+  </aside>
+  <main class="desktop">
+    <header class="topbar glass">
+      <a class="site-name" href="{{ url_for('home') }}"><span class="heart-chip">♥</span> Smiruthi's Aqua Space</a>
+      <nav class="topnav">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('pokemon') }}"><span class="pokeball tiny"><i></i></span> Pokémon</a>
+        <a href="{{ url_for('blog') }}">Blog</a>
+      </nav>
+      <span class="now-playing"><span class="headphone">♫</span> in my own world</span>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="footer glass"><span>☼ made of little things & big dreams</span><span>Smiruthi <b>♥</b> 2026</span></footer>
+  </main>
+  <div class="taskbar glass"><span class="start-pill">◉ Start</span><span class="task-app">♡ Smiruthi's Aqua Space</span><span class="task-right">◖　♫　◉ <small>sunny side up · 2026</small></span></div>
+</body>
+</html>

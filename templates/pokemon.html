@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Pokémon · Smiruthi's Aqua Space{% endblock %}
+{% block content %}
+<section class="page-heading glass pokemon-heading"><span class="pokeball big"><i></i></span><div><div class="section-kicker">MY HAPPY LITTLE COLLECTION</div><h1>My Pokémon <span>♡</span></h1><p>17 favourites. Endless love.</p></div><span class="heading-decoration">✦　○　✧</span></section>
+<div class="collection-note glass"><span>✧</span> Every Pokémon has a little place in my heart. <span class="note-right">Gotta love 'em all! ♡</span></div>
+<section class="pokemon-grid">
+{% for p in pokemon %}
+  <article class="pokemon-card glass">
+    <div class="pokemon-shine"></div><div class="pokemon-sprite"><img loading="lazy" src="{{ p.sprite }}" alt="{{ p.name }}"></div>
+    <h3>{{ p.name }}</h3><div class="types"><span class="type type-{{ p.type1|lower }}">{{ p.type1 }}</span>{% if p.type2 %}<span class="type type-{{ p.type2|lower }}">{{ p.type2 }}</span>{% endif %}</div>
+    {% if p.name == "Shiny Charizard" %}<span class="shiny-label">✦ SHINY ✦</span>{% endif %}
+  </article>
+{% endfor %}
+</section>
+{% endblock %}
